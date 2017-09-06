@@ -1,7 +1,7 @@
 # KalenderProsjekt
 Prosjektgruppe av Hanna, Linda og Marius
 
-# Team Members;
+# Team Members
 
 https://github.com/Mariush95
 
