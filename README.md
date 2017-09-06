@@ -1,4 +1,4 @@
-# KalenderProsjekt
+# Kalender Prosjekt
 Prosjektgruppe av Hanna, Linda og Marius
 
 # Team Members
