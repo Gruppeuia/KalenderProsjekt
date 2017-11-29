@@ -1,12 +1,30 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express(); //server-app
 
-app.set('port', (process.env.PORT || 8080));
+// global for all routes -------------------------
+app.use(function(req, res, next) {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+    next(); //go to the specified route
+});
 
-app.use(express.static('public'))
+// -----------------------------------------------
+//route handling is delegated to:
+var liste = require('./liste.js');
+app.use('/ToDo/liste/', liste);
 
-	
 
-app.listen(app.get('port'), function () {
-  console.log('Example app listening on port 8080!')
-})
+var login = require('./login.js');
+app.use('/ToDo/login/', login);
+
+//Not yet implemented:
+//var users = require('./users.js');
+//app.use('/travellog/users/', users);
+
+//------------------------------------------------
+app.listen(8080, function () {
+  console.log('Server listening on port 8080!');
+});
+
+
+
